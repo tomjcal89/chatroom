@@ -78,9 +78,8 @@ class Chat extends Component {
             // username
             <div className="row">
                 <div className="optionsContainer col-lg-5">
-                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>** Must be 18 years or older to use this website **</div>
-                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>Chose a username to begin!</div>
-                    <div className="optionsUsername">Username: {this.state.username}</div>
+                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>Please enter your Username to start chatting</div>
+                    <div className="optionsUsername"> {this.state.username}</div>
                     <div className="row" style={this.state.username ? { display: 'none' } : {}}>
                         <form>
                             <input type="text" className="usernameInput" value={this.state.textfieldUsername} onChange={e => this.handleChangeUsername(e.target.value)} ></input>
@@ -113,10 +112,12 @@ class Chat extends Component {
                         </div>
 
                         <div className="messageInputContainer row" >
+                        <div className="row">
                             <form>
-                                <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
+                                <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} onKeyDown={this.onKeyPres}></input>
                             </form>
-                            <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
+                            <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} >Send</button>
+                        </div>
                         </div>
                     </div>
                 </div>

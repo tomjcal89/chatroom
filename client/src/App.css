@@ -24,16 +24,12 @@
 } */
 
 .jumbotron{
-  height: 400px;
+  height: 300px;
   width: 100%;
   margin-right: 0px;
 }
 
-.btn{
-  height: 50px;
-  position: relative;
-  grid-row: auto
-}
+
 
 img {
   width: 100%;
@@ -97,8 +93,8 @@ button{
 
 .jumbotron{
   margin-right: 40px;
-  height: 600px;
-  max-height: 600px;
+  height: 400px;
+  max-height: 400px;
   overflow: auto
 }
 
@@ -108,11 +104,11 @@ button{
   line-height: 'inherit'
   
 }
-.messageInputContainer {
+/* .messageInputContainer {
   margin-right: 50px;
   margin-top: 30px;
   
-}
+} */
 .messageInput {
   width: 600px;
   height: 30;
@@ -124,11 +120,15 @@ button{
   text-decoration: underline
 }
 
-.navbar{
+/* .navbar{
   color: white;
   font-size: 30px
-}
+} */
 
+.navName{
+  color: white;
+  font-size: 20px;
+}
 .optionsContainer{
   margin-top: 10px;
   height: 700px;

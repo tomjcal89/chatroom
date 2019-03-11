@@ -15,7 +15,7 @@ import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
-import Chat from './components/dashboard/Chat'
+import Chat from './components/chatroom/Chat'
 import Login from './components/auth/Login';
 import NotFound from './components/not-found/NotFound';
 
