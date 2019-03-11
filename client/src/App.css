@@ -1,0 +1,68 @@
+button{
+    margin-left: 10px;
+}
+
+.messagePaper{
+    max-width: 100%;
+    margin-top:10;
+    border-radius: 4px;
+    background-color: white  
+}
+
+.jumbotron{
+    margin-right: 40px;
+    height: 600px;
+    max-height: 600px;
+    overflow: auto
+}
+
+.messageText {
+    padding-left: 20px;
+    overflow: 'hidden';
+    line-height: 'inherit'
+    
+}
+.messageInputContainer {
+    margin-right: 50px;
+    margin-top: 30px;
+    
+}
+.messageInput {
+    width: 600px;
+    height: 30;
+}
+
+.messageTitle {
+    padding: 20px;
+    font-weight: bold;
+    text-decoration: underline
+}
+
+.navbar{
+    color: white;
+    font-size: 30px
+}
+
+.optionsContainer{
+    margin-top: 10px;
+    height: 700px;
+    justify-content: 'flex-start'
+}
+.optionsTitle{
+    color: black;
+    font-size: 25px;
+    margin-top: 65;
+    margin-left: 40px;
+}
+.optionsUsername{
+    font-size: 40px;
+    color: gray;
+    margin-left: 40px;
+    margin-top: 40px;
+   
+}
+.usernameInput{
+    margin-left: 40px;
+    width: 70%;
+    height: 30;
+}
