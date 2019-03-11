@@ -1,34 +1,55 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const passport = require('passport');
+const path = require('path');
 const socket = require("socket.io")
 
-//Routes
+
+const users = require('./routes/api/users');
 const clients = require('./routes/api/clients');
 const chats = require('./routes/api/chats');
-//
+
 const app = express();
 
-//Body-Parser Middleware
+// Body parser middleware
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//DB Config
-const DB = require('./config/keys').mongoURI;
+// DB Config
+const db = require('./config/keys').mongoURI;
 
-//Connect to Mongo
+// Connect to MongoDB
 mongoose
-    .connect(DB,{ useNewUrlParser: true })
-    .then(()=>console.log('Mongo connected'))
-    .catch(err=>console.log(err));
+  .connect(db)
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
-//Use Routes 
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport Config
+require('./config/passport')(passport);
+
+// Use Routes
+app.use('/api/users', users);
 app.use('/api/clients',clients);
 app.use('/api/chats',chats);
 
 
-const PORT = 5000;
+// Server static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
 
-server = app.listen(PORT,()=>console.log(`Server started on ${PORT}`));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+const port = process.env.PORT || 5000;
+
+server = app.listen(port, () => console.log(`Server running on port ${port}`));
 io = socket(server);
 io.on('connection', (socket) => {
     

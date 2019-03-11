@@ -1,68 +1,154 @@
+.row1{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+.userDiv{
+  text-align: center;
+  position: relative;
+  font-size: 15px;
+  width: 200px;
+  padding: 20px;
+  text-align: left;
+  height: 500px;
+  border: solid;
+  border-width: thin;
+  border-radius: 10px;
+  white-space: normal;
+  overflow: auto;
+}
+
+/* .welcome {
+  text-align: center;
+} */
+
+.jumbotron{
+  height: 400px;
+  width: 100%;
+  margin-right: 0px;
+}
+
+.btn{
+  height: 50px;
+  position: relative;
+  grid-row: auto
+}
+
+img {
+  width: 100%;
+
+}
+
+.landing {
+  position: relative;
+  background: url("./img/showcase.jpg") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position:center;
+  height: 100vh;
+  margin-top: -24px;
+  margin-bottom: -50px;
+}
+
+.landing-inner {
+  padding-top: 80px;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-form {
+  opacity: 0.9;
+}
+
+.latest-profiles-img {
+  width: 40px;
+  height: 40px;
+}
+
+.form-control::placeholder {
+  color: #bbb !important;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
 button{
-    margin-left: 10px;
+  margin-left: 10px;
 }
 
 .messagePaper{
-    max-width: 100%;
-    margin-top:10;
-    border-radius: 4px;
-    background-color: white  
+  max-width: 100%;
+  margin-top:10;
+  border-radius: 4px;
+  background-color: white  
 }
 
 .jumbotron{
-    margin-right: 40px;
-    height: 600px;
-    max-height: 600px;
-    overflow: auto
+  margin-right: 40px;
+  height: 600px;
+  max-height: 600px;
+  overflow: auto
 }
 
 .messageText {
-    padding-left: 20px;
-    overflow: 'hidden';
-    line-height: 'inherit'
-    
+  padding-left: 20px;
+  overflow: 'hidden';
+  line-height: 'inherit'
+  
 }
 .messageInputContainer {
-    margin-right: 50px;
-    margin-top: 30px;
-    
+  margin-right: 50px;
+  margin-top: 30px;
+  
 }
 .messageInput {
-    width: 600px;
-    height: 30;
+  width: 600px;
+  height: 30;
 }
 
 .messageTitle {
-    padding: 20px;
-    font-weight: bold;
-    text-decoration: underline
+  padding: 20px;
+  font-weight: bold;
+  text-decoration: underline
 }
 
 .navbar{
-    color: white;
-    font-size: 30px
+  color: white;
+  font-size: 30px
 }
 
 .optionsContainer{
-    margin-top: 10px;
-    height: 700px;
-    justify-content: 'flex-start'
+  margin-top: 10px;
+  height: 700px;
+  justify-content: 'flex-start'
 }
 .optionsTitle{
-    color: black;
-    font-size: 25px;
-    margin-top: 65;
-    margin-left: 40px;
+  color: black;
+  font-size: 25px;
+  margin-top: 65;
+  margin-left: 40px;
 }
 .optionsUsername{
-    font-size: 40px;
-    color: gray;
-    margin-left: 40px;
-    margin-top: 40px;
-   
+  font-size: 40px;
+  color: gray;
+  margin-left: 40px;
+  margin-top: 40px;
+ 
 }
 .usernameInput{
-    margin-left: 40px;
-    width: 70%;
-    height: 30;
+  margin-left: 40px;
+  width: 70%;
+  height: 30;
 }
