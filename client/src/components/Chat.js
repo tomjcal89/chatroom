@@ -33,7 +33,7 @@ class Chat extends Component {
             })
         }
     }
-    
+
     handleChangeInput = (input) => {
         this.setState({
             textfield: input
@@ -70,59 +70,56 @@ class Chat extends Component {
             window.alert('enter')
         }
         return true
-       
     }
 
     render() {
 
-        
         return (
-
             // username
             <div className="row">
-            <div className="optionsContainer col-lg-5">
+                <div className="optionsContainer col-lg-5">
                     <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>** Must be 18 years or older to use this website **</div>
-                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>To start sending messages write an username</div>
+                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>Chose a username to begin!</div>
                     <div className="optionsUsername">Username: {this.state.username}</div>
                     <div className="row" style={this.state.username ? { display: 'none' } : {}}>
                         <form>
-                        <input type ="text" className="usernameInput"  value={this.state.textfieldUsername} onChange={e => this.handleChangeUsername(e.target.value)} ></input>
+                            <input type="text" className="usernameInput" value={this.state.textfieldUsername} onChange={e => this.handleChangeUsername(e.target.value)} ></input>
 
                         </form>
-                        <button className="button"  class="btn btn-dark" onClick={() => this.handleUsername()}>Submit</button>
+                        <button className="button" class="btn btn-dark" onClick={() => this.handleUsername()}>Submit</button>
                     </div>
                 </div>
 
-                 {/* chatroom */}
+                {/* chatroom */}
                 <div className="chatContainer col-lg-7">
 
                     <div classname="col-lg-7">
-                    <div class="jumbotron">
-                        {
-                            this.state.messages.map((message) => {
-                                return (
-                                    <div className="messagePaper">
-                                        <div className="messageTitle">
-                                            {message.username}
+                        <div class="jumbotron">
+                            {
+                                this.state.messages.map((message) => {
+                                    return (
+                                        <div className="messagePaper">
+                                            <div className="messageTitle">
+                                                {message.username}
+                                            </div>
+                                            <div className="messageText">
+                                                {message.content}
+                                                <hr></hr>
+                                            </div>
                                         </div>
-                                        <div className="messageText">
-                                            {message.content}
-                                            <hr></hr>
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
+                                    )
+                                })
+                            }
+                        </div>
+
+                        <div className="messageInputContainer row" >
+                            <form>
+                                <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
+                            </form>
+                            <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
+                        </div>
                     </div>
-                    
-                    <div className="messageInputContainer row" >
-                        <form>
-                            <input  type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
-                        </form>
-                        <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
-                    </div>
-                    </div>
-                </div>      
+                </div>
             </div>
         )
     }
