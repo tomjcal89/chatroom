@@ -114,9 +114,9 @@ class Chat extends Component {
                         <div className="messageInputContainer row" >
                         <div className="row">
                             <form>
-                                <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} onKeyDown={this.onKeyPres}></input>
+                                <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
                             </form>
-                            <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} >Send</button>
+                            <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
                         </div>
                         </div>
                     </div>
