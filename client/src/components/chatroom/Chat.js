@@ -65,6 +65,7 @@ class Chat extends Component {
     }
 
     onKeyPres = (event) => {
+        console.log("Clicked Me");
         if (event.charCode === 13) { // enter key pressed
             event.preventDefault();
             window.alert('enter')
@@ -81,11 +82,15 @@ class Chat extends Component {
                     <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>Please enter your Username to start chatting</div>
                     <div className="optionsUsername"> {this.state.username}</div>
                     <div className="row" style={this.state.username ? { display: 'none' } : {}}>
-                        <form>
+                        <form onSubmit={e => {
+                            e.preventDefault()
+                            console.log("On Submit")
+                            this.handleUsername()
+                        }}>
                             <input type="text" className="usernameInput" value={this.state.textfieldUsername} onChange={e => this.handleChangeUsername(e.target.value)} ></input>
 
+                            <button className="button" class="btn btn-dark" type="submit" /*onClick={() => this.handleUsername()}*/>Submit</button>
                         </form>
-                        <button className="button" class="btn btn-dark" onClick={() => this.handleUsername()}>Submit</button>
                     </div>
                 </div>
 
