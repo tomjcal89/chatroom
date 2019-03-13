@@ -25,7 +25,7 @@ class Chat extends Component {
                 content: data.content
             }
             let newList = [...this.state.messages]
-            newList.unshift(newMessage)
+            newList.push(newMessage)
 
             this.setState({
                 messages: newList,
@@ -57,7 +57,9 @@ class Chat extends Component {
             this.socket.emit('SEND_MESSAGE', {
                 username: this.state.username,
                 content: this.state.textfield
+                
             })
+            
         } else {
             window.alert('message cannot be empty or username')
         }
