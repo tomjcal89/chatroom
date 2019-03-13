@@ -20,8 +20,8 @@ app.use(bodyParser.json());
 // const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
-var MONGODB_URI = process.env.MONGODB_URI;
-mongoose.connect(MONGODB_URI)
+
+mongoose.connect(process.env.MONGODB_URI)
 
 // Passport middleware
 app.use(passport.initialize());
