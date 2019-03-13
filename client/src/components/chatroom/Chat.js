@@ -13,7 +13,7 @@ class Chat extends Component {
             messages: [
             ],
         }
-        this.socket = io('https://guarded-fortress-17968.herokuapp.com/');
+        this.socket = io('http://localhost:5000');
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             recieveMessage(data);
