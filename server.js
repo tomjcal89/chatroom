@@ -17,13 +17,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+// const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
-mongoose
-  .connect(db)
-  .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+var MONGODB_URI = process.env.MONGODB_URI;
+mongoose.connect(MONGODB_URI)
 
 // Passport middleware
 app.use(passport.initialize());

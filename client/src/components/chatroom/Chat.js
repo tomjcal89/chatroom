@@ -13,7 +13,7 @@ class Chat extends Component {
             messages: [
             ],
         }
-        this.socket = io('http://localhost:5000');
+        this.socket = io('https://guarded-fortress-17968.herokuapp.com/');
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             recieveMessage(data);
@@ -118,7 +118,11 @@ class Chat extends Component {
 
                         <div className="messageInputContainer row" >
                         <div className="row">
-                            <form>
+                        <form onSubmit={e => {
+                            e.preventDefault()
+                            console.log("On Submit")
+                            this.handleSend()
+                        }}>
                                 <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
                             </form>
                             <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
