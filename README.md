@@ -14,16 +14,16 @@ Deployed Link: https://mern-instant-messenger.herokuapp.com/
 
 Homepage
 
-![Screenshot](img/home.png){ width=50% }
+![Screenshot](img/home.png)
 
 Registration
 
-![Screenshot](img/register.png){ width=50% }
+![Screenshot](img/register.png)
 
 Sign-in
 
-![Screenshot](img/login.png){ width=50% }
+![Screenshot](img/login.png)
 
 Chatroom
 
-![Screenshot](img/chat.png){ width=50% }
+![Screenshot](img/chat.png)
