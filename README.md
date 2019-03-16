@@ -22,7 +22,7 @@ Sign-Up
 
 Log-In
 
-![Screenshot](img/login.png)
+![Screenshot](img/log.png)
 
 Chatroom
 
