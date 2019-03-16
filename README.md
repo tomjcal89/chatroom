@@ -16,14 +16,14 @@ Homepage
 
 ![Screenshot](img/home.png)
 
-Registration
+Sign-Up
 
-![Screenshot](img/register.png)
+![Screenshot](img/signup.png)
 
-Sign-in
+Log-In
 
 ![Screenshot](img/login.png)
 
 Chatroom
 
-![Screenshot](img/chat.png)
+![Screenshot](img/chatroom.png)
