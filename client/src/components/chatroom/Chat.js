@@ -25,7 +25,7 @@ class Chat extends Component {
                 content: data.content
             }
             let newList = [...this.state.messages]
-            newList.push(newMessage)
+            newList.unshift(newMessage)
 
             this.setState({
                 messages: newList,
