@@ -13,7 +13,7 @@ class Chat extends Component {
             messages: [
             ],
         }
-        this.socket = io('http://localhost:5000');
+        this.socket = io('https://mern-instant-messenger.herokuapp.com/');
 
         this.socket.on('RECEIVE_MESSAGE', function (data) {
             recieveMessage(data);
