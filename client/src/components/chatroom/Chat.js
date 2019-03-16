@@ -57,9 +57,9 @@ class Chat extends Component {
             this.socket.emit('SEND_MESSAGE', {
                 username: this.state.username,
                 content: this.state.textfield
-                
+
             })
-            
+
         } else {
             window.alert('message cannot be empty or username')
         }
@@ -79,26 +79,29 @@ class Chat extends Component {
 
         return (
             // username
-            <div className="row">
-                <div className="optionsContainer col-lg-5">
-                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>Please enter your Username to start chatting</div>
+
+            <div className="chatContainer row">
+                <div className="optionsContainer col-lg-4 col-sm-12 " >
+                    <div className="optionsTitle" style={this.state.username ? { display: 'none' } : {}}>What's your Username?</div>
                     <div className="optionsUsername"> {this.state.username}</div>
                     <div className="row" style={this.state.username ? { display: 'none' } : {}}>
-                        <form onSubmit={e => {
-                            e.preventDefault()
-                            console.log("On Submit")
-                            this.handleUsername()
-                        }}>
-                            <input type="text" className="usernameInput" value={this.state.textfieldUsername} onChange={e => this.handleChangeUsername(e.target.value)} ></input>
-
-                            <button className="button" class="btn btn-dark" type="submit" /*onClick={() => this.handleUsername()}*/>Submit</button>
-                        </form>
+                        <div class="input-group mb-3">
+                            <form onSubmit={e => {
+                                e.preventDefault()
+                                console.log("On Submit")
+                                this.handleUsername()
+                            }}>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Recipient's username" aria-describedby="button-addon2" value={this.state.textfieldUsername} onChange={e => this.handleChangeUsername(e.target.value)} ></input>
+                            </form>
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="button" id="button-addon2" onClick={this.handleUsername} onKeyDown={this.onKeyPres}>Submit</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* chatroom */}
-                <div className="chatContainer col-lg-7">
-
+                <div className="chatContainer col-lg-7 col-sm-12">
                     <div classname="col-lg-7">
                         <div class="jumbotron">
                             {
@@ -117,19 +120,17 @@ class Chat extends Component {
                                 })
                             }
                         </div>
-
-                        <div className="messageInputContainer row" >
-                        <div className="row">
-                        <form onSubmit={e => {
-                            e.preventDefault()
-                            console.log("On Submit")
-                            this.handleSend()
-                        }}>
-                                <input type="text" className="messageInput" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
-                            </form>
-                            <button className="button" type="button" class="btn btn-dark" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
-                        </div>
-                        </div>
+                        <form class="input-group mb-3"
+                            onSubmit={e => {
+                                e.preventDefault()
+                                console.log("On Submit")
+                                this.handleSend()
+                            }}>
+                            <input type="text" class="form-control" placeholder="What do you want to say?" aria-label="Recipient's username" aria-describedby="button-addon2" value={this.state.textfield} onChange={e => this.handleChangeInput(e.target.value)} ></input>
+                            <div class="input-group-append">
+                                <button class="btn btn-dark" type="button" id="button-addon2" onClick={this.handleSend} onKeyDown={this.onKeyPres}>Send</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
